@@ -2998,7 +2998,7 @@ def main() -> int:
                 output_directory = str(input_bam_parent_path / f'GC_bias_correction_GCparagon{VERSION_STRING}')
             # set up target output directory and logfile
             start_time = time.localtime()
-            sample_out_dir_path = Path(output_directory) / sample_id
+            sample_out_dir_path = Path(output_directory)# / sample_id
             if sample_out_dir_path.exists() and compute_bias:  # do NOT delete if tag only mode is active!
                 print_warnings.append(f"Output path for GC bias computation exists. Deleting completely: "
                                       f"'{sample_out_dir_path}'")
